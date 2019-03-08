@@ -13,7 +13,7 @@ It’s the v2.0 document we’ll be looking at, our current activities are:
 Bearing this in mind, we’ll look at how this will be handled under Git and GitHub management.
 
 ## Git / GitHub Concepts
-There are four Git concepts that need to be understood: commits, tags, branches / branching, and pull requests. 
+There are four Git concepts that need to be understood: commits, tags, branches / branching, and pull requests.
 
 ### Commits
 Commits are checked in units of work on a document. This is a simple model where by an author makes changes to a file or files in the repository and then checks them into the repository. This check in is a commit and it records:
@@ -34,5 +34,14 @@ Git branches are a way of organizing different streams of work within a reposito
 - `feat/segmented_ips` where development of the segmented information packages documentation can continue for release in a future version; and
 - `integration` which is the current working copy of the specification to ensure that different strands of work can be merged together before publication.
 
+![Release branch from master](images/new-branch.png "Create new branch from master.")
+
+#### Create new git branch
+1. From the repo home page ensure that the branch you wish to copy, in this case master, is selected.
+2. Hit the pull down button and type the new branch name. In the image below we're creating the `rel/2.0-draft` branch.
+3. Click the "Create branch: rel/2.0-draft" panel. The name will be that of the branch you're creating. Check the "from 'master'" tag to ensure you're cloning the branch you intend, in this case master.
+
+![GitHub workflow](images/E-ARK CSIP Git Branches.svg "A GitHub workflow.")
+
 ### Pull Requests
-A 
+A
