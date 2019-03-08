@@ -41,7 +41,7 @@ Git branches are a way of organizing different streams of work within a reposito
 2. Hit the pull down button and type the new branch name. In the image below we're creating the `rel/2.0-draft` branch.
 3. Click the "Create branch: rel/2.0-draft" panel. The name will be that of the branch you're creating. Check the "from 'master'" tag to ensure you're cloning the branch you intend, in this case master.
 
-![GitHub workflow](images/E-ARK CSIP Git Branches.svg "A GitHub workflow.")
+![GitHub workflow](images/eark-csip-gif-flow.svg "A GitHub workflow.")
 
 ### Pull Requests
 A
