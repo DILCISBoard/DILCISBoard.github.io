@@ -13,7 +13,9 @@ Commits are checked in units of work on a document. This is a simple model where
 Here’s an illustration of a small commit to the CSIP repository, it simply changes the version number and publication date: https://github.com/DILCISBoard/E-ARK-CSIP/commit/afaededeabb82d1b6afb0e10154e6ac9c3518a60 the long last part of the URL is the SHA1 id of the commit itself. Work is built up as a chain of commits. Ideally an individual commit should be small as it makes tracking changes and rolling back work easier. The name commit is derived from the act of committing a change to the permanent record by checking the work into a repository.
 
 ### Tags
-A tag is a effectively a bookmark to an individual commit and is used to record a significant state in the project repository. Released versions are given a tag and typical tag names tend to reflect this, e.g. v2.0 for the CSIP. Tags come in two flavours, lightweight tags are also used by authors to bookmark particular states of work. Official release tags tend to be annotated tags store more information, e.g. author, comment, dates etc. to give confidence to users that the state is an approved version.
+A tag is a effectively a bookmark to an individual commit and is used to record a significant state in the project repository. Released versions are given a tag and typical tag names tend to reflect this, e.g. v2.0 for the CSIP. Tags come in two flavours, lightweight tags are also used by authors to bookmark particular states of work. Official release tags tend to be annotated tags store more information, e.g. author, comment, dates etc. to give confidence to users that the state is an approved version. The `v2.0-draft` of the CSIP is shown in the figure below.
+
+![CSIP v2.0-draft tag](images/git-tag-release.png "The CSIP v2.0-draft tag and release.")
 
 ### Branches and versioning
 Git branches are a way of organizing different streams of work within a repository. It’s the use of branches that allow multiple authors to work on a single document simultaneously. In effect branches are nothing more than mobile tags that record a particular state of work. To illustrate consider the current work on the CSIP which might be organized into the following branches:
@@ -36,7 +38,24 @@ These are used to:
 - make editorial changes to a specific version, usually correcting spelling issues or
 fixing typos.
 
-## The CSIP and GitHub
+### Pull Requests
+[Pull requests](https://help.github.com/en/articles/about-pull-requests) are GitHub's mechanism for sharing and organising work done in other branches.
+Once a pull request is open its contents can be reviewed by other project members and follow-on
+commits can be added if necessary. A pull request can be initiated by comparing any two branches
+for changes. Once a pull request is made it usually, depending on the repository policy,
+requires a review before it can be merged. The figure below shows a PR made against the
+CSIP repository that awaits review.
+
+![Pull request for E-ARK CSIP](images/PR-example.png "Pull request submitting typos for the CSIP.")
+
+#### Create new git branch
+1. From the repo home page ensure that the branch you wish to copy, in this case master, is selected.
+2. Hit the pull down button and type the new branch name. In the image below we're creating the `rel/2.0-draft` branch.
+3. Click the "Create branch: rel/2.0-draft" panel. The name will be that of the branch you're creating. Check the "from 'master'" tag to ensure you're cloning the branch you intend, in this case master.
+
+![Release branch from master](images/new-branch.png "Create new branch from master.")
+
+## The CSIP and GitHub Workflow
 There’s been a considerable amount to produce a draft of version 2 of the common specification. This has involved both the revision of the text and the transfer of the content from a Word document to a plain text source hosted on GitHub. The motivation behind the move to GitHub was to make change and version control simpler going forward. The Word model of track changes and comments had become overwhelmed with multiple sets of comments and suggested changes proving difficult to untangle. Git, and GitHub by extension, provides a more granular and nuances approach to managing changes to text based documents. These have traditionally been source code but it’s also used to control supporting documentation. While Git can be used to version binary files it’s at it’s best when working with plain text formats, e.g. ASCII, Unicode, etc. where it provides a set of supporting tools for analysing and approving changes. One or two structured text formats have been developed to support documentation on source control systems. Markdown has been one of the most popular and successful. It allows basic HTML like formatting to be provided using plain text constructs, indeed this document is written in Markdown. Other document forms, e.g. HTML or PDF can easily be generated from a Markdown source, while the source document itself can be transparently accessed and managed via GitHub. This is the reason that the CSIP was converted to Markdown which is then converted to HTML for the CSIP website, but is also used to generate the PDF document.
 
 Our current state of play is that we have:
@@ -61,13 +80,3 @@ In the diagram it can be seen that `integration` (in purple) and `master` (in gr
 Following the yellow boxes for work on draft releases it can be seen that the draft release `rel/v2.0-draft` is created from the `integration` branch. The official draft release is also pushed to `master`. Revisions to the draft are made in the `fix/v2-draft` which is merged with the `rel/v2.0-draft` branch to create the corrected `rel/v2.0` branch. In reality this work would take place in several branches as separate strands of work. The diagram excludes these for clarity.
 
 Once version 2.0 is ready in `rel/v2.0` it can be merged to `master` and to integration as the content also needs to be in the working version. At the same time work can continue in the red `feat/segmented_ips` branch. The author must merge the latest work from `integration` here also so that other work, e.g. typos fixed in v2.0 are retained. Once work has finished on the segmented IP branch it can be merged to `master` for publication in a future specification version, e.g. v2.1.
-
-### Pull Requests
-TODO
-
-#### Create new git branch
-1. From the repo home page ensure that the branch you wish to copy, in this case master, is selected.
-2. Hit the pull down button and type the new branch name. In the image below we're creating the `rel/2.0-draft` branch.
-3. Click the "Create branch: rel/2.0-draft" panel. The name will be that of the branch you're creating. Check the "from 'master'" tag to ensure you're cloning the branch you intend, in this case master.
-
-![Release branch from master](images/new-branch.png "Create new branch from master.")

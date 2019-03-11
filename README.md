@@ -56,26 +56,6 @@ We control change to the specification and track versions using git [branches](h
 Each repository contains two named branches that aren't associated with a particular
 version of the specification:
 
-- `master` is the latest officially released version of the specification.
-This is the designated as the main branch for the repository making it the default
-branch viewed on GitHub. The information in this branch is authoritative as it has
-been reviewed and approved by the DILCIS Board. If you're looking for a version of
-the specification to use in your organisation or are unsure as to which branch to
-use you're advised to start here.
-- `integration` holds the work been done on the upcoming version of the specification.
-While the work here has been reviewed by the DILCIS Board it may be subject to change
-as the new specification version evolves. If you're interested in reviewing or
-contributing to future versions of the specification you should start here.
-
-Each repository also contains specific release branches named `rel/<version-no>`.
-These are used to:
-
-- allow the board and users to easily view previous versions of the specification; and
-- make editorial changes to a specific version, usually correcting spelling issues or
-fixing typos.
-
-In addition specific release points are tagged and added to a project's GitHub releases
-page. Tags provide a simple bookmark to a specific version of the specification.
 
 ### Providing a contribution
 The branch arrangement described above allows changes to be made to a specific
