@@ -1,5 +1,9 @@
 This document provides an introduction for those unfamiliar with Git and GitHub’s support for branching and versioning. It uses the development of the Common Specification for Information Packages to illustrate the points. We’ll start by looking at the current state of play with the CSIP.
 
+## GitHub tools and references
+This is intended as a guide to GitHub, there are plenty of good online resources.
+[GitHub's official guides](https://guides.github.com/) are the best place to start.
+
 ## Git / GitHub Concepts
 There are four Git concepts that need to be understood: commits, tags, branches / branching, and pull requests.
 
@@ -10,15 +14,19 @@ Commits are checked in units of work on a document. This is a simple model where
 - a record of the changes made; and
 - a unique SHA1 identifier for the check in itself.
 
-Here’s an illustration of a small commit to the CSIP repository, it simply changes the version number and publication date: https://github.com/DILCISBoard/E-ARK-CSIP/commit/afaededeabb82d1b6afb0e10154e6ac9c3518a60 the long last part of the URL is the SHA1 id of the commit itself. Work is built up as a chain of commits. Ideally an individual commit should be small as it makes tracking changes and rolling back work easier. The name commit is derived from the act of committing a change to the permanent record by checking the work into a repository.
+Here’s an illustration of a small commit to the CSIP repository, it simply changes the version number and publication date:
+
+![CSIP commit](images/commit.png "A simple git commit on GitHub.")
+
+The original can be found at https://github.com/DILCISBoard/E-ARK-CSIP/commit/afaededeabb82d1b6afb0e10154e6ac9c3518a60 the long last part of the URL is the SHA1 id of the commit itself. Work is built up as a chain of commits. Ideally an individual commit should be small as it makes tracking changes and rolling back work easier. The name commit is derived from the act of committing a change to the permanent record by checking the work into a repository.
 
 ### Tags
-A tag is a effectively a bookmark to an individual commit and is used to record a significant state in the project repository. Released versions are given a tag and typical tag names tend to reflect this, e.g. v2.0 for the CSIP. Tags come in two flavours, lightweight tags are also used by authors to bookmark particular states of work. Official release tags tend to be annotated tags store more information, e.g. author, comment, dates etc. to give confidence to users that the state is an approved version. The `v2.0-draft` of the CSIP is shown in the figure below.
+A [tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging) is effectively a bookmark to an individual commit and is used to record a significant state in the project repository. Released versions are given a tag and typical tag names tend to reflect this, e.g. v2.0 for the CSIP. Tags come in two flavours, lightweight tags are also used by authors to bookmark particular states of work. Official release tags tend to be annotated tags store more information, e.g. author, comment, dates etc. to give confidence to users that the state is an approved version. The `v2.0-draft` of the CSIP is shown in the figure below.
 
 ![CSIP v2.0-draft tag](images/git-tag-release.png "The CSIP v2.0-draft tag and release.")
 
 ### Branches and versioning
-Git branches are a way of organizing different streams of work within a repository. It’s the use of branches that allow multiple authors to work on a single document simultaneously. In effect branches are nothing more than mobile tags that record a particular state of work. To illustrate consider the current work on the CSIP which might be organized into the following branches:
+[Git branches](https://git-scm.com/book/en/v1/Git-Branching-What-a-Branch-Is) are a way of organizing different strands of work within a repository. It’s the use of branches that allow multiple authors to work on a single document simultaneously. In effect branches are nothing more than mobile tags that record a particular state of work. To illustrate consider the current work on the CSIP which might be organized into the following branches:
 
 - `master` is the latest officially released version of the specification.
 This is the designated as the main branch for the repository making it the default
@@ -48,12 +56,7 @@ CSIP repository that awaits review.
 
 ![Pull request for E-ARK CSIP](images/PR-example.png "Pull request submitting typos for the CSIP.")
 
-#### Create new git branch
-1. From the repo home page ensure that the branch you wish to copy, in this case master, is selected.
-2. Hit the pull down button and type the new branch name. In the image below we're creating the `rel/2.0-draft` branch.
-3. Click the "Create branch: rel/2.0-draft" panel. The name will be that of the branch you're creating. Check the "from 'master'" tag to ensure you're cloning the branch you intend, in this case master.
-
-![Release branch from master](images/new-branch.png "Create new branch from master.")
+GitHub provides a pull request view for each project. Here's the open pull requests for the Common Specification project: https://github.com/DILCISBoard/E-ARK-CSIP/pulls. This view shows pull requests that have been closed: https://github.com/DILCISBoard/E-ARK-CSIP/pulls?q=is%3Apr+is%3Aclosed.
 
 ## The CSIP and GitHub Workflow
 There’s been a considerable amount to produce a draft of version 2 of the common specification. This has involved both the revision of the text and the transfer of the content from a Word document to a plain text source hosted on GitHub. The motivation behind the move to GitHub was to make change and version control simpler going forward. The Word model of track changes and comments had become overwhelmed with multiple sets of comments and suggested changes proving difficult to untangle. Git, and GitHub by extension, provides a more granular and nuances approach to managing changes to text based documents. These have traditionally been source code but it’s also used to control supporting documentation. While Git can be used to version binary files it’s at it’s best when working with plain text formats, e.g. ASCII, Unicode, etc. where it provides a set of supporting tools for analysing and approving changes. One or two structured text formats have been developed to support documentation on source control systems. Markdown has been one of the most popular and successful. It allows basic HTML like formatting to be provided using plain text constructs, indeed this document is written in Markdown. Other document forms, e.g. HTML or PDF can easily be generated from a Markdown source, while the source document itself can be transparently accessed and managed via GitHub. This is the reason that the CSIP was converted to Markdown which is then converted to HTML for the CSIP website, but is also used to generate the PDF document.
