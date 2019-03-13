@@ -32,7 +32,7 @@ the officially released branch and doesn't contain the latest changes;
 - pull requests should usually be created using the branch that represents the
 version you wish to amend, for instance changes to version 2.0 of the CSIP should
 be made agains the `rel/2.0` branch; and
-- if you submit a PR against the wrong branch don't worry, there's no harm done and
+- if you submit a pull request against the wrong branch don't worry, there's no harm done and
 a member of the review team will get in touch and help.
 
 ### Pull Request Style
