@@ -1,7 +1,7 @@
 DILCIS Board Git & GitHub Policy
 ================================
 
-The DILCIS Board use [GitHub](https://github.com/) and [Git](https://git-scm.com/)
+The DILCIS Board uses [GitHub](https://github.com/) and [Git](https://git-scm.com/)
 as a version and change control system for specifications and software. These documents
 describe the board's conventions for Git branch usage and a guide for contributors.
 They don't provide help for Git, a command line version control tool, or
